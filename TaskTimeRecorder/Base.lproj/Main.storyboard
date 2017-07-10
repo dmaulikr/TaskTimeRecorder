@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Time Record View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TimeRecordViewController" customModule="TaskTimeRecorder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="buB-5T-5OJ">
+                                <rect key="frame" x="16" y="20" width="343" height="527"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ukB-56-fpu"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Oph-yh-AuM"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVs-Ft-q0L">
+                                <rect key="frame" x="16" y="567" width="169" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="tXR-6G-8PK"/>
+                                </constraints>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="RecordButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="PpX-X3-5Hr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdx-2K-5WH">
+                                <rect key="frame" x="185" y="567" width="174" height="81"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="EditButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="dmf-qi-4Wa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zVs-Ft-q0L" firstAttribute="top" secondItem="buB-5T-5OJ" secondAttribute="bottom" constant="20" id="5a0-Ve-RTh"/>
+                            <constraint firstItem="buB-5T-5OJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9yf-rk-usG"/>
+                            <constraint firstItem="rdx-2K-5WH" firstAttribute="leading" secondItem="zVs-Ft-q0L" secondAttribute="trailing" id="GNQ-Js-Jrf"/>
+                            <constraint firstItem="zVs-Ft-q0L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Jzb-5P-BDh"/>
+                            <constraint firstItem="rdx-2K-5WH" firstAttribute="height" secondItem="zVs-Ft-q0L" secondAttribute="height" id="RsQ-Sq-XI0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rdx-2K-5WH" secondAttribute="trailing" id="cjm-kw-nVM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="buB-5T-5OJ" secondAttribute="trailing" id="ddH-4f-dH4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="buB-5T-5OJ" secondAttribute="bottom" constant="120" id="dut-z8-5sG"/>
+                            <constraint firstItem="rdx-2K-5WH" firstAttribute="top" secondItem="buB-5T-5OJ" secondAttribute="bottom" constant="20" id="o9E-yD-oR6"/>
+                            <constraint firstItem="buB-5T-5OJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="t3b-VU-5wp"/>
+                            <constraint firstItem="zVs-Ft-q0L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.45" id="yx1-J9-kPB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="EditButton" destination="rdx-2K-5WH" id="WQb-ai-L5d"/>
+                        <outlet property="RecordButton" destination="zVs-Ft-q0L" id="mhi-cg-XR5"/>
+                        <outlet property="RecordTimeTableView" destination="buB-5T-5OJ" id="qpQ-Po-wSR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="130.88455772113943"/>
         </scene>
     </scenes>
 </document>

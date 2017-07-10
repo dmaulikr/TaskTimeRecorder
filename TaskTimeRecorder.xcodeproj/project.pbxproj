@@ -99,11 +99,10 @@
 		BFB6047D1F13B36A006B17B1 /* TaskTimeRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				BFB604AF1F13B393006B17B1 /* UI Files */,
 				BFB6047E1F13B36A006B17B1 /* AppDelegate.swift */,
 				BFB604801F13B36A006B17B1 /* ViewController.swift */,
-				BFB604821F13B36A006B17B1 /* Main.storyboard */,
 				BFB604881F13B36A006B17B1 /* Assets.xcassets */,
-				BFB6048A1F13B36A006B17B1 /* LaunchScreen.storyboard */,
 				BFB6048D1F13B36A006B17B1 /* Info.plist */,
 				BFB604851F13B36A006B17B1 /* TaskTimeRecorder.xcdatamodeld */,
 			);
@@ -126,6 +125,15 @@
 				BFB604A31F13B36A006B17B1 /* Info.plist */,
 			);
 			path = TaskTimeRecorderUITests;
+			sourceTree = "<group>";
+		};
+		BFB604AF1F13B393006B17B1 /* UI Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFB604821F13B36A006B17B1 /* Main.storyboard */,
+				BFB6048A1F13B36A006B17B1 /* LaunchScreen.storyboard */,
+			);
+			name = "UI Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
